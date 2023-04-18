@@ -6,9 +6,10 @@ import { GameresultComponent } from './gameresult/gameresult.component';
 
 const routes: Routes = [
   { path: 'header', component: HeaderComponent},
-  { path:"", redirectTo:'header', pathMatch:'full'},
+  { path: "", redirectTo:'header', pathMatch:'full'},
   { path: 'trackTeam', component: TrackteamComponent},
-  { path: 'gameResult/:teamCode', component: GameresultComponent}
+  { path: 'gameResult/:teamCode', component: GameresultComponent},
+  { path: '**', redirectTo:'header'}
 ];
 
 @NgModule({
