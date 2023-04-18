@@ -1,0 +1,66 @@
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 54%;
+  }
+  .card {
+    margin-top: 14px;
+    padding: 10px;
+    position: relative;
+  }
+  // .card-title {
+  //   font-size: 19px;
+  //   margin-bottom: 12px;
+  // }
+  .card-img {
+    width: 145px;
+    margin-left: 30px;
+  }
+  .conference{
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .resultbtn {
+    margin-top: 12px;
+    margin-left: 12px;
+    width: 200px;
+  }
+   .backBtn {
+    margin-top: 66px;
+    width: 345px;
+  }
+  .pastResults {
+    font-size: 15px;
+  }
+  .fa-close {
+    padding-left: 70px;
+  }
+  .result{
+    font-size:15px;
+    margin-top: 5px;
+    font-weight: normal;
+  }
+  .showDetails{
+    font-size:15px;
+    margin-top: 5px;
+    font-weight: normal;
+  }
+  .dots{
+    padding-left:6px;
+  }
+  .dot {
+    margin: 6px;
+    margin-left: 4px;
+    padding-left: 6px;
+    padding-top: 6px;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 14px;
+    font-size: 14px;
+  }
+  .redColor {background-color: #ff0000;
+  padding-left: 9px;
+  }
+  .greenColor {background-color: #198754;;
+  padding-left: 6px;}
