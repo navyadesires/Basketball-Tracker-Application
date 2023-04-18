@@ -1,3 +1,7 @@
+export interface config {
+  XRapidAPIKey: string
+}
+
 export interface teamsResponse {
   data: teamDetails[];
   meta: meta;

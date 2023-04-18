@@ -2,18 +2,24 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { gameResultResponse, gamesData, teamDetails, teamsResponse } from '../interfaces/basketballtracking';
+import { config, gameResultResponse, gamesData, teamDetails, teamsResponse } from '../interfaces/basketballtracking';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NbatrackerService {
+  private _config: config;
+  private _key: string;
  
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this._config = environment.config;
+    this._key = this._config['XRapidAPIKey'];
+  }
 
   private setHeaders(): HttpHeaders {
     const header: { [key: string]: string } = {
-      'X-RapidAPI-Key': 'adb94d2021mshe5a67a9f391143ap1d9113jsn80417b58d797',
+      'X-RapidAPI-Key': this._key,
       'X-RapidAPI-Host': 'free-nba.p.rapidapi.com',
     };
     return new HttpHeaders(header);
