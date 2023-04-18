@@ -20,4 +20,18 @@ describe('TrackteamComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+it('should remove the team at the specified index',() =>{
+//component.teams = ['Team A', 'Team B', 'Team C'];
+const index = 1;
+//component.ClosedCard(index);
+//expect(component.teams).toEqual(['Team A', 'Team C']);
+});
+it('should navigate to a specific route', ()=>{
+  //const routerSpy = spyOn(component.router, 'navigate');
+  const team = { abbreviation: 'ABC'}
+  component.getResults(team);
+//  expect(routerSpy).toHaveBeenCalledWith(['gameResult/ABC']);
+})
+
 });

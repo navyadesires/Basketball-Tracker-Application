@@ -17,7 +17,6 @@ import {
   ProviderToken,
   Type,
 } from '@angular/core';
-// import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
 
 describe('HeaderComponent', () => {
@@ -26,6 +25,7 @@ describe('HeaderComponent', () => {
   const trackTeamComponent = jasmine.createSpyObj('TrackteamComponent', [
     'getTeamDetails',
   ]);
+  
 
   const teamForm = new FormBuilder().group({
     team: [null],
@@ -92,6 +92,21 @@ describe('HeaderComponent', () => {
     expect(component.teamForm.value.team).toBe(1);
     console.log('seesion', sessionStorage.getItem('selectedTeam'));
     expect(sessionStorage.getItem('selectedTeam')).toBe('[1]');
+  });
+
+  it('should update currentTeam with the value from teamForm', () => {
+    const teamFormValue = { team: 'current team' };
+    component.teamForm.setValue(teamFormValue);
+    component.submit();
+    expect(component.currentTeam).toEqual(teamFormValue.team);
+  });
+
+  it('should store the selected team in sessionStorage', () => {
+    const teamFormValue = { team: 'current team' };
+    component.teamForm.setValue(teamFormValue);
+    component.submit();
+    const storedTeams = JSON.parse(sessionStorage.getItem('selectedTeam') || '[]');
+    expect(storedTeams).toContain(teamFormValue.team);
   });
 
   it('should call game responce using loadingTeams', () => {
