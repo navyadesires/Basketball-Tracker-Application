@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { NbatrackerService } from '../services/nbatracker.service';
 import { GameresultComponent } from '../gameresult/gameresult.component';
 import { Router } from '@angular/router';
@@ -72,7 +72,6 @@ export class TrackteamComponent implements OnInit {
                 concededPts: concededScore,
               });
             }
-
 
           },
           (err: Error) => console.error(err)

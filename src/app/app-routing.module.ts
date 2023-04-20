@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: "", redirectTo:'header', pathMatch:'full'},
   { path: 'trackTeam', component: TrackteamComponent},
   { path: 'gameResult/:teamCode', component: GameresultComponent},
-  { path: '**', component: HeaderComponent}
+  { path: '**', redirectTo:'header'}
 ];
 
 @NgModule({

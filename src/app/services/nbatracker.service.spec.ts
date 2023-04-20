@@ -13,4 +13,8 @@ describe('NbatrackerService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+  it('#getValue should return real value', () => {
+  //  expect(service.getingTeams()).toBe('real value');
+  });
+
 });
