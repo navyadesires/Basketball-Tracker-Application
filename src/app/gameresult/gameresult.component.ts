@@ -14,7 +14,6 @@ export class GameresultComponent implements OnInit {
   selectedTeamResults: gamesData[] | undefined;
   TeamFullName! : string;
   conference : string | undefined;
-  teamForm!: FormGroup;
 
   constructor(
     private nba: NbatrackerService,
@@ -24,9 +23,6 @@ export class GameresultComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.teamForm = this.fb.group({
-      team: [null],
-    });
     this.getGameResults();
   }
 

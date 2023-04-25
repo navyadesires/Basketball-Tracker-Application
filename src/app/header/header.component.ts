@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit {
     });
     this.loadingTeams();
   }
-
   submit(): void {
     this.currentTeam = this.teamForm.value.team;
     let teams = [];
@@ -48,11 +47,11 @@ export class HeaderComponent implements OnInit {
   }
 
   loadingTeams(): void {
-    console.log('service', this.nba.getingTeams())
     this.nba.getingTeams().subscribe((data: teamDetails[]) => {
       this.teams = data;
     });
   }
+  
   getTeamDetails(): void {
     this.trackteamComponent.getTeamDetails(this.teamForm.value.team);
   }

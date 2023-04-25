@@ -34,7 +34,6 @@ export interface meta
 }
 
 export interface gamesData {
-  teamDetails: any;
   id: number;
   date: string;
   home_team: teamDetails;

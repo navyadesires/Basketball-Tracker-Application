@@ -58,7 +58,6 @@ export class TrackteamComponent implements OnInit {
                 }
               }
             });
-
             if (
               !this.teams.find(
                 (obj: teamResult) =>
@@ -72,7 +71,6 @@ export class TrackteamComponent implements OnInit {
                 concededPts: concededScore,
               });
             }
-
           },
           (err: Error) => console.error(err)
         );
@@ -86,5 +84,11 @@ export class TrackteamComponent implements OnInit {
   }
   closedCard(i: number): void {
     this.teams.splice(i, 1);
+  }
+
+  testArray(i: number, array: number[]): number[] {
+    array.push(i+2);
+    // this.testArray(i+2, array);
+    return array;
   }
 }
