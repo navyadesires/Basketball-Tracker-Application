@@ -5,42 +5,58 @@
         <div class="card-body">
           <div class="row">
             <h5 class="card-title col-md-9">
-              {{ team.teamDetails.full_name }} [{{ team.teamDetails.abbreviation }}]
+             <h5 class="teamDetails">   
+              {{ team.teamDetails.full_name }}
+              <span class="tooltiptext">  {{ team.teamDetails.full_name }} text</span>
+            </h5>
+              <h5 class="abbreviation">[{{ team.teamDetails.abbreviation}}]</h5>
             </h5>
             <i class="fa fa-close col-md-3" (click)="closedCard(i)"></i>
+        
           </div>
-          <!-- <h3 class="card-title"></h3> -->
-          <h4 class="conference">{{ team.teamDetails.conference }} conference</h4>
+          <h4 class="conference">
+            {{ team.teamDetails.conference }} conference
+          </h4>
           <hr class="hr hr-blurry" />
-        <div class="row">
-          <h3 class="result">Result of past 12 games :</h3>
-          <div class="row col-sm-6">
-            <div class="col-sm-2 dots" *ngFor="let result of team.modifiedTeamResults">
-              <span class="dot" [ngClass]="result.winner ? 'greenColor' : 'redColor'">{{result.winner ? 'W' : 'L'}}</span>
+          <div class="row">
+            <h3 class="result">Result of past 12 games :</h3>
+            <div class="row col-sm-6">
+              <div
+                class="col-sm-2 dots"
+                *ngFor="let result of team.modifiedTeamResults"
+              >
+                <span
+                  class="dot"
+                  [ngClass]="result.winner ? 'greenColor' : 'redColor'"
+                  >{{ result.winner ? "W" : "L" }}</span
+                >
+              </div>
             </div>
+            <div class="row col-sm-6">
+              <img
+                class="card-img"
+                src="https://interstate21.com/nba-logos/{{
+                  team.teamDetails.abbreviation
+                }}.png"
+                alt="{{ team.teamDetails.full_name }} Team Logo"
+              />
+            </div>
+            <div class="row colorrow">   
+              <h3 class="col-sm-6 result">Avg pts scored : {{ team.avgPts }}</h3>         
+              <p class="col-sm-5 greendot"> </p>Green    
+              <h3 class="col-sm-6 result">Avg pts conceded: {{ team.concededPts }}</h3> 
+              <p class="col-sm-5 reddot"> </p> Red
+                         
+            </div>
+            <button
+              id="results"
+              class="btn resultbtn btn-success"
+              type="submit"
+              (click)="getResults(team.teamDetails)"
+            >
+              See game results >>
+            </button>
           </div>
-          <div class="row col-sm-6">
-            <img
-              class="card-img"
-              src="https://interstate21.com/nba-logos/{{
-                team.teamDetails.abbreviation
-              }}.png"
-              alt="{{ team.teamDetails.full_name }} Team Logo"
-            />
-          </div>
-          <h3 class="result"> Avg pts scored : {{team.avgPts}}</h3>
-          <h3 class="result"> Avg pts conceded: {{team.concededPts}}</h3>
-
-          <button
-            id="results"
-            class="btn resultbtn btn-success"
-            type="submit"
-            (click)="getResults(team.teamDetails)"
-          >
-            See game results >>
-          </button>
-        </div>
-         
         </div>
       </div>
     </div>

@@ -10,10 +10,10 @@ import { gamesData, teamDetails } from '../interfaces/basketballtracking';
   styleUrls: ['./gameresult.component.scss'],
 })
 export class GameresultComponent implements OnInit {
-  selectedTeam! : string;
+  selectedTeam!: string;
   selectedTeamResults: gamesData[] | undefined;
-  TeamFullName! : string;
-  conference : string | undefined;
+  TeamFullName!: string;
+  conference: string | undefined;
 
   constructor(
     private nba: NbatrackerService,
@@ -27,22 +27,24 @@ export class GameresultComponent implements OnInit {
   }
 
   backBtn(): void {
-     this.nba.getTeamResults().subscribe((resp) => {
-        this.route.navigate(['/header']);
-     });
+    this.nba.getTeamResults().subscribe((resp) => {
+      this.route.navigate(['/score']);
+    });
   }
 
   getGameResults(): void {
     this.router.params.subscribe((params) => {
       this.selectedTeam = params['teamCode'];
     });
-    this.nba.getTeamResults().subscribe((resp : gamesData[]) => {
+    this.nba.getTeamResults().subscribe((resp: gamesData[]) => {
       this.selectedTeamResults = resp.filter(
-        (obj: gamesData) : boolean =>
+        (obj: gamesData): boolean =>
           obj.home_team.abbreviation === this.selectedTeam ||
           obj.visitor_team.abbreviation === this.selectedTeam
       );
-      if (this.selectedTeamResults[0].home_team.abbreviation === this.selectedTeam) {
+      if (
+        this.selectedTeamResults[0].home_team.abbreviation === this.selectedTeam
+      ) {
         this.TeamFullName = this.selectedTeamResults[0].home_team.full_name;
         this.conference = this.selectedTeamResults[0].home_team.conference;
       } else {

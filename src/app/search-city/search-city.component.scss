@@ -1,0 +1,23 @@
+.teamSelect {
+    width: 285px;
+    border-radius: 5px;
+    border-color: gray;
+    background-color: white;
+  }
+.logo {
+    display: block;
+    height: 50px;
+    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    cursor: pointer;
+    padding-bottom: 17px;
+    padding-top:10px;
+    padding-right: 40px;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+.mainImage {
+  height: 60vh;
+  width: 100%;
+}

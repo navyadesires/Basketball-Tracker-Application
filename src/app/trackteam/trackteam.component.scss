@@ -1,66 +1,110 @@
-  .col-sm-6 {
-    flex: 0 0 auto;
-    width: 54%;
-  }
-  .card {
-    margin-top: 14px;
-    padding: 10px;
-    position: relative;
-  }
-  // .card-title {
-  //   font-size: 19px;
-  //   margin-bottom: 12px;
-  // }
-  .card-img {
-    width: 145px;
-    margin-left: 30px;
-  }
-  .conference{
-    font-size: 14px;
-    margin-top: 12px;
-  }
-  .resultbtn {
-    margin-top: 12px;
-    margin-left: 12px;
-    width: 200px;
-  }
-   .backBtn {
-    margin-top: 66px;
-    width: 345px;
-  }
-  .pastResults {
-    font-size: 15px;
-  }
-  .fa-close {
-    padding-left: 70px;
-  }
-  .result{
-    font-size:15px;
-    margin-top: 5px;
-    font-weight: normal;
-  }
-  .showDetails{
-    font-size:15px;
-    margin-top: 5px;
-    font-weight: normal;
-  }
-  .dots{
-    padding-left:6px;
-  }
-  .dot {
-    margin: 6px;
-    margin-left: 4px;
-    padding-left: 6px;
-    padding-top: 6px;
-    height: 26px;
-    width: 26px;
-    border-radius: 50%;
-    display: inline-block;
-    line-height: 14px;
-    font-size: 14px;
-  }
-  .redColor {background-color: #ff0000;
+.col-sm-6 {
+  flex: 0 0 auto;
+  width: 54%;
+}
+.card {
+  margin-top: 14px;
+  padding: 10px;
+  position: relative;
+}
+.card-img {
+  width: 145px;
+  margin-left: 30px;
+}
+// .card-title{
+//   max-width: 120px;
+//   text-overflow: ellipsis;
+//   overflow: hidden;
+//   white-space: nowrap;
+// }
+.teamDetails {
+  max-width: 123px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.teamDetails:hover .tooltiptext {
+  visibility: visible;
+  position: absolute;
+  z-index: 1;
+  // border-width: 1px;
+  // border-style: solid;
+  margin-top: -8px;
+  bottom: 93%;
+  left: 52%;
+  margin-left: -60px;
+  font-size: 16px;
+}
+.conference {
+  font-size: 14px;
+  margin-top: 12px;
+}
+.resultbtn {
+  margin-top: 12px;
+  margin-left: 12px;
+  width: 200px;
+}
+.backBtn {
+  margin-top: 66px;
+  width: 345px;
+}
+.pastResults {
+  font-size: 15px;
+}
+.fa-close {
+  padding-left: 58px;
+}
+.result {
+  font-size: 15px;
+  font-weight: normal;
+}
+.showDetails {
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: normal;
+}
+.dots {
+  padding-left: 6px;
+}
+.dot {
+  margin: 6px;
+  margin-left: 4px;
+  padding-left: 6px;
+  padding-top: 6px;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 14px;
+  font-size: 14px;
+}
+.redColor {
+  background-color: #ff0000;
   padding-left: 9px;
-  }
-  .greenColor {background-color: #198754;;
-  padding-left: 6px;}
+}
+.greenColor {
+  background-color: #198754;
+  padding-left: 6px;
+}
+.colorrow {
+  margin-top: 12px;
+}
+.reddot {
+  height: 5px;
+  width: 8px;
+  background-color: red;
+  //  border-radius: 50%;
+  display: inline-block;
+  margin-top: 12px;
+  margin-left: 50px;
+  margin-right: 9px;
+}
+.greendot {
+  height: 5px;
+  width: 10px;
+  background-color: green;
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-top: 9px;
+}

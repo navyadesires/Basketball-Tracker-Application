@@ -3,7 +3,12 @@ import { FormGroup } from '@angular/forms';
 import { NbatrackerService } from '../services/nbatracker.service';
 import { GameresultComponent } from '../gameresult/gameresult.component';
 import { Router } from '@angular/router';
-import { gameResultResponse, gamesData, teamDetails, teamResult } from '../interfaces/basketballtracking';
+import {
+  gameResultResponse,
+  gamesData,
+  teamDetails,
+  teamResult,
+} from '../interfaces/basketballtracking';
 
 @Component({
   selector: 'app-trackteam',
@@ -11,22 +16,19 @@ import { gameResultResponse, gamesData, teamDetails, teamResult } from '../inter
   styleUrls: ['./trackteam.component.scss'],
 })
 export class TrackteamComponent implements OnInit {
-  @Input() trackTeam: string = '';
+  // @Input() trackTeam: string = '';
 
   @ViewChild(GameresultComponent) gameresult!: GameresultComponent;
   teams: teamResult[] = [];
   teamForm!: FormGroup;
 
-  constructor(
-    private nba: NbatrackerService,
-    private router: Router
-  ) {}
+  constructor(private nba: NbatrackerService, private router: Router) {}
 
   ngOnInit(): void {
     let storage = sessionStorage.getItem('selectedTeam');
-    if(storage !== null){
+    if (storage !== null) {
       let teams = JSON.parse(storage);
-      teams.forEach((teamId : number) => {
+      teams.forEach((teamId: number) => {
         this.getTeamDetails(teamId);
       });
     }
@@ -34,27 +36,33 @@ export class TrackteamComponent implements OnInit {
 
   getTeamDetails(value: number): void {
     this.nba.getTeamDetails(value).subscribe(
-      (resp: teamDetails) : void => {
+      (resp: teamDetails): void => {
         let teamResults;
         let avgScore = 0;
         let concededScore = 0;
         this.nba.getTeamsData(value).subscribe(
           (teamResult: gameResultResponse): void => {
             teamResults = teamResult.data;
-            teamResults.forEach((obj:gamesData): void => {
+            teamResults.forEach((obj: gamesData): void => {
               if (obj.home_team.id === value) {
                 obj['winner'] =
                   obj.home_team_score > obj.visitor_team_score ? true : false;
-                  avgScore = obj.home_team_score + avgScore;
+                avgScore = obj.home_team_score + avgScore;
                 if (!obj['winner']) {
-                  concededScore = obj.visitor_team_score - obj.home_team_score + concededScore;
+                  concededScore =
+                    obj.visitor_team_score -
+                    obj.home_team_score +
+                    concededScore;
                 }
               } else {
                 obj['winner'] =
                   obj.visitor_team_score > obj.home_team_score ? true : false;
                 avgScore = obj.visitor_team_score + avgScore;
                 if (!obj['winner']) {
-                  concededScore = obj.home_team_score - obj.visitor_team_score + concededScore;
+                  concededScore =
+                    obj.home_team_score -
+                    obj.visitor_team_score +
+                    concededScore;
                 }
               }
             });
@@ -79,16 +87,10 @@ export class TrackteamComponent implements OnInit {
     );
   }
 
-  getResults(team: any) : void{
+  getResults(team: any): void {
     this.router.navigate(['/gameResult/' + team.abbreviation]);
   }
   closedCard(i: number): void {
     this.teams.splice(i, 1);
-  }
-
-  testArray(i: number, array: number[]): number[] {
-    array.push(i+2);
-    // this.testArray(i+2, array);
-    return array;
   }
 }

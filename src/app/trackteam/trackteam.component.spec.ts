@@ -56,7 +56,7 @@ describe('TrackteamComponent', () => {
           name: 'Hawks',
         },
         visitor_team_score: 99,
-        winner: true
+        winner: true,
       },
       {
         id: 473359,
@@ -86,8 +86,8 @@ describe('TrackteamComponent', () => {
           name: 'Hawks',
         },
         visitor_team_score: 99,
-        winner: true
-      }
+        winner: true,
+      },
     ],
     meta: {
       total_pages: 522,
@@ -137,7 +137,7 @@ describe('TrackteamComponent', () => {
         teamDetails: getingTeamsMockData[0],
         modifiedTeamResults: getingTeamDetailsMock.data,
         avgPts: 125,
-        concededPts: 0
+        concededPts: 0,
       },
       {
         teamDetails: getingTeamsMockData[1],
@@ -149,7 +149,6 @@ describe('TrackteamComponent', () => {
 
     component.getTeamDetails(16);
     expect(component.teams.length).toBe(1);
-    // expect(component.teams).toEqual(mock);
   });
 
   it('should call get Team Details when team losses', () => {
@@ -157,13 +156,17 @@ describe('TrackteamComponent', () => {
   });
 
   it('should call get Team Details and get error in getTeamsData API', () => {
-    const spy = spyOn(component['nba'], 'getTeamsData').and.returnValue(throwError(error));
+    const spy = spyOn(component['nba'], 'getTeamsData').and.returnValue(
+      throwError(error)
+    );
     component.getTeamDetails(17);
     expect(spy).toHaveBeenCalled();
   });
 
   it('should call get Team Details and get error in getTeamDetails API', () => {
-    const spy = spyOn(component['nba'], 'getTeamDetails').and.returnValue(throwError(error));
+    const spy = spyOn(component['nba'], 'getTeamDetails').and.returnValue(
+      throwError(error)
+    );
     component.getTeamDetails(17);
     expect(spy).toHaveBeenCalled();
   });
@@ -181,7 +184,7 @@ describe('TrackteamComponent', () => {
         teamDetails: getingTeamsMockData[0],
         modifiedTeamResults: getingTeamDetailsMock.data,
         avgPts: 12,
-        concededPts: 13
+        concededPts: 13,
       },
       {
         teamDetails: getingTeamsMockData[0],
@@ -196,21 +199,4 @@ describe('TrackteamComponent', () => {
     expect(component.teams.length).toBe(1);
     expect(component.teams).toEqual([mock[0]]);
   });
-
-  // it('should call push testArray', ()=>{
-  //   const arr = [2, 20, 23, 12];
-  //   const valuearray = (0, arr);
-  //   expect(arr).toEqual([2,20,23,12])
-  // })
-
-it('should return an array input is 1', ()=>{
-  const result = component.testArray(1,[]);
-  expect(result).toEqual([3,5,7]);
-});
-
-it('should return an array input is 0', ()=>{
-  const result = component.testArray(0,[]);
-  expect(result).toEqual([2]);
-});
-
 });

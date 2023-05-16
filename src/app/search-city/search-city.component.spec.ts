@@ -1,5 +1,5 @@
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HeaderComponent } from './header.component';
 import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -14,10 +14,11 @@ import {
   Type,
 } from '@angular/core';
 import { of } from 'rxjs';
+import { SearchCityComponent } from './search-city.component';
 
-describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+describe('SearchCityComponent', () => {
+  let component: SearchCityComponent;
+  let fixture: ComponentFixture<SearchCityComponent>;
   const trackTeamComponent = jasmine.createSpyObj('TrackteamComponent', ['getTeamDetails']);
 
   const teamForm = new FormBuilder().group({
@@ -46,7 +47,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HeaderComponent],
+      declarations: [SearchCityComponent],
       imports: [
         ReactiveFormsModule,
         RouterTestingModule,
@@ -62,7 +63,7 @@ describe('HeaderComponent', () => {
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(SearchCityComponent);
     component = fixture.componentInstance;
     component.trackteamComponent = trackTeamComponent;
     fixture.detectChanges();
@@ -114,3 +115,4 @@ describe('HeaderComponent', () => {
     expect(component.teamForm.value.team).toBe(1);
   });
 });
+

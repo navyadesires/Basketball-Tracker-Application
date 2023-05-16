@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <img class="col-sm-1 logo" src="./assets/NBA-logo.jpg" />
+    <div class="col-sm-3 mainheading">NBA Score Tracking App</div>
+  </div>
+
+  <form [formGroup]="teamForm" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col-md-3 items">
+        <select formControlName="team" class="btn teamSelect" id="teamSelect">
+          <option [ngValue]="null" disabled>Select City</option>
+          <option *ngFor="let team of teams" [ngValue]="team.id">
+            {{ team.city }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <button
+          id="trackBtn"
+          class="btn btn-success"
+          type="submit"
+          (click)="getTeamDetails()"
+        >
+          Team Work
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<app-trackteam></app-trackteam>

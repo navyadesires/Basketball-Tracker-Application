@@ -42,7 +42,7 @@ describe('GameresultComponent', () => {
       },
       visitor_team_score: 94,
       winner: true,
-    }
+    },
   ];
 
   const nbaGameResultMock = () => ({
@@ -82,6 +82,7 @@ describe('GameresultComponent', () => {
   });
 
   it('should call back button', () => {
+    spyOn(component['route'], 'navigate');
     component.backBtn();
   });
 
@@ -92,6 +93,7 @@ describe('GameresultComponent', () => {
     expect(component.TeamFullName).toBe('Charlotte Hornets');
     expect(component.conference).toBe('East');
   });
+
   it('should create Results for selected team(when Home Team)', () => {
     component['router'].params = of({ teamCode: 'BOS' });
     component.getGameResults();

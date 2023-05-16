@@ -1,60 +1,67 @@
-
 .card {
-    margin-top: 14px;
-    padding: 10px;
-    position: relative;
-  }
-  .card-title {
-    font-size: 19px;
-    margin-bottom: 12px;
-  }
-  .card-img {
-    width: 135px;
-    margin-left: 20px;
-  }
-  .conference{
-    font-size: 14px;
-  }
-  .resultbtn {
-    margin-top: 12px;
-    margin-left: 12px;
-    width: 200px;
-  }
-  .backBtn {
-    margin-top: 66px;
-    width: 345px;
-  }
-  .pastResults {
-    font-size: 15px;
-  }
-  .fa-close {
-    padding-left: 70px;
-  }
-  .result{
-    font-size:15px;
-    margin-top: 5px;
-    font-weight: normal;
-  }
-  .showDetails{
-    font-size:15px;
-    margin-top: 5px;
-    font-weight: normal;
-  }
-  .dots{
-    padding-left:6px;
-  }
-  .dot {
-    margin: 5px;
-    margin-left: 4px;
-    padding-left: 6px;
-    padding-top: 6px;
-    height: 25px;
-    width: 25px;
-    background-color: red;
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    line-height: 13px;
-    font-size: 13px;
-  }
-  
+  margin-top: 14px;
+  padding: 10px;
+  position: relative;
+}
+.card-title {
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+.card-img {
+  width: 135px;
+  margin-left: 20px;
+}
+.conference {
+  font-size: 14px;
+}
+.resultbtn {
+  margin-top: 12px;
+  margin-left: 12px;
+  width: 200px;
+}
+.backBtn {
+  margin-top: 66px;
+  width: 345px;
+}
+.pastResults {
+  font-size: 15px;
+}
+.fa-close {
+  padding-left: 70px;
+}
+.result {
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: normal;
+}
+.showDetails {
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: normal;
+}
+.dots {
+  padding-left: 6px;
+}
+.dot {
+  margin: 5px;
+  margin-left: 4px;
+  padding-left: 6px;
+  padding-top: 6px;
+  height: 25px;
+  width: 25px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 13px;
+  font-size: 13px;
+}
+.logo {
+  display: block;
+  height: 50px;
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  cursor: pointer;
+  padding-bottom: 17px;
+  padding-top: 10px;
+  padding-right: 40px;
+}

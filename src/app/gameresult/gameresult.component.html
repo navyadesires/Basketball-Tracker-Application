@@ -1,30 +1,41 @@
 <div class="container-fluid">
-  <div class="mainheading">NBA Score Trackig App</div>  
+  <div class="row">
+    <img class="col-sm-1 logo" src="./assets/NBA-logo.jpg" />
+    <div class="col-sm-3 mainheading">NBA Score Tracking App</div>
+  </div>
+
   <div class="row">
     <div class="col-sm-4">
       <div class="card">
         <div class="card-body">
           <div class="row">
-            <h5 class="card-title col-md-9">            
-              {{TeamFullName}} [{{ selectedTeam }}]
+            <h5 class="card-title col-md-9">
+              {{ TeamFullName }} [{{ selectedTeam }}]
             </h5>
           </div>
-            <h3 class="card-title"></h3>
-            <h4 class="conference">{{ conference }} conference</h4>
-            <hr class="hr hr-blurry" />         
-              <p>Score of past 12 days :</p>
-              <div *ngFor="let teamresult of selectedTeamResults">  
-                <div class="pastResults">
-                  <b>{{ teamresult.home_team.abbreviation }}</b>
-                  {{ teamresult.home_team_score }} -
-                  {{ teamresult.visitor_team_score }}
-                  <b>{{ teamresult.visitor_team.abbreviation }}</b>
-                </div>
-               </div>  
-               <button id="results" class="btn backBtn btn-success" type="submit"
-                (click)="backBtn()"> << Back to all team stats </button>
+          <h3 class="card-title"></h3>
+          <h4 class="conference">{{ conference }} conference</h4>
+          <hr class="hr hr-blurry" />
+          <p>Score of past 12 days :</p>
+          <div *ngFor="let teamresult of selectedTeamResults">
+            <div class="pastResults">
+              <b>{{ teamresult.home_team.abbreviation }}</b>
+              {{ teamresult.home_team_score }} -
+              {{ teamresult.visitor_team_score }}
+              <b>{{ teamresult.visitor_team.abbreviation }}</b>
             </div>
+          </div>
+          <button
+            id="results"
+            class="btn backBtn btn-success"
+            type="submit"
+            (click)="backBtn()"
+          >
+            << Back to all team stats
+          </button>
+        </div>
       </div>
     </div>
   </div>
-<!-- </div>  -->
+  <!-- </div>  -->
+</div>

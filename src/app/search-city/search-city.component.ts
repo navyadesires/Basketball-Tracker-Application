@@ -5,11 +5,12 @@ import { TrackteamComponent } from '../trackteam/trackteam.component';
 import { teamDetails } from '../interfaces/basketballtracking';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: 'app-search-city',
+  templateUrl: './search-city.component.html',
+  styleUrls: ['./search-city.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class SearchCityComponent implements OnInit {
+
   currentTeam: string = '';
   teamForm!: FormGroup;
   teams!: teamDetails[];
